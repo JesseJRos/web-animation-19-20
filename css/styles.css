@@ -1,3 +1,144 @@
 body {
     background-color: black;
 }
+
+/* eyeball */
+.eye {
+    fill: #c9ccc2;
+    display: block;
+    margin-left: 22em;
+    margin-top: -20em;
+    width: 100px;
+    height: 100px;
+    }
+
+.pupil{
+      position:relative;
+      fill: black;
+      /* stroke-width: 8;
+      stroke: #78728b; */
+    }
+
+/* mouthBeams */
+.mouthBeam1 {
+    fill:url(#linear-gradient);
+    stroke:url(#linear-gradient-2);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.mouthBeam2 {
+    fill:url(#linear-gradient-3);
+    stroke:url(#linear-gradient-4);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.mouthBeam3 {
+    fill:url(#linear-gradient-5);
+    stroke:url(#linear-gradient-6);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+/* head */
+.headShape {
+    fill:url(#linear-gradient-7);
+}
+
+.headColor{
+    fill:#e6c393;
+}
+
+.faceMask { 
+    fill:url(#linear-gradient-8);
+}
+
+.earHole { 
+    fill:#231a17;
+}
+
+/* linesUnder */
+.lineUnder1 { 
+    fill:url(#linear-gradient-9);
+    stroke:url(#linear-gradient-10);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineUnder2 { 
+    fill:url(#linear-gradient-11); 
+    stroke:url(#linear-gradient-12); 
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineUnder3 { 
+    fill:url(#linear-gradient-13);
+    stroke:url(#linear-gradient-14); 
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+/* peopleLeft */
+.peopleLeft1 {
+    fill:url(#linear-gradient-15);
+}
+
+.peopleLeft2 { 
+    fill:url(#linear-gradient-16);
+}
+
+.peopleLeft3 { 
+    fill:url(#linear-gradient-17);
+}
+
+/* bar */
+.barRectangle { 
+    fill:#75522f;
+}
+
+/* lineOver */
+.lineOver1 { 
+    fill:url(#linear-gradient-18);
+    stroke:url(#linear-gradient-19);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineOver2 { 
+    fill:url(#linear-gradient-20);
+    stroke:url(#linear-gradient-21);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineOver3 { 
+    fill:url(#linear-gradient-22);
+    stroke:url(#linear-gradient-23);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineOver4 { 
+    stroke:url(#linear-gradient-24);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+} 
+
+/* peopleRight */
+.peopleRight1 {
+    fill:url(#linear-gradient-25);
+}
+
+.peopleRight2 {
+    fill:url(#linear-gradient-26);
+}
+
+.peopleRight3 {
+    fill:url(#linear-gradient-27);
+}
+
+.peopleRight4 {
+    fill:url(#linear-gradient-28);
+}
