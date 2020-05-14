@@ -3,7 +3,7 @@ body {
 }
 
 /* eyeball */
-.eye {
+.eyeball {
     fill: #c9ccc2;
     display: block;
     margin-left: 22em;
@@ -14,7 +14,7 @@ body {
 
 .pupil{
       position:relative;
-      fill: black;
+      fill: black(219, 49, 49);
       /* stroke-width: 8;
       stroke: #78728b; */
     }
@@ -143,7 +143,6 @@ body {
     fill:url(#linear-gradient-28);
 }
 
-
 /* CSS animations */
 .puff-in-center {
     animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
@@ -217,7 +216,7 @@ opacity: 1;
     }
   }
 
-  .slide-in-elliptic-top-fwd {
+  #peopleRight {
 	        animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 

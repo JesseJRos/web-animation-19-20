@@ -52,13 +52,10 @@
             
             <g id="ear"><circle class="earHole" cx="196.69" cy="111.63" r="7.17"/></g>
             
-            <!-- <g id="eye">
-                <circle class="eyeball" cx="226.45" cy="64.26" r="6.43"/>
-            </g>
-             <g class="pupil">
-                <circle class="eyeColor" cx="226.45" cy="64.26" r="4.42"/>
-                <circle class="iris" cx="226.45" cy="64.26" r="2.58"/>
-            </g> -->
+            <g id="eye">
+                <circle class="eyeball" cx="225" cy="65" r="10"/></g>
+
+            <g> <circle class="pupil" cx="225" cy="65" r="5"/></g>
 
             <g id="linesUnder" data-name="Lines Under"><line class="lineUnder1" x1="190.48" y1="108.15" x2="0.73" y2="3.07"/><line class="lineUnder2" x1="189.73" y1="111.47" x2="2.98" y2="111.47"/><line class="lineUnder3" x1="191.01" y1="114.75" x2="2.98" y2="220.47"/></g>
             
@@ -68,14 +65,19 @@
             
             <g id="linesOver" data-name="Lines Over"><line class="lineOver1" x1="191.66" y1="107.09" x2="81.92" y2="1.08"/><line class="lineOver2" x1="190.04" y1="109.45" x2="1.21" y2="51.08"/><line class="lineOver3" x1="190.26" y1="113.39" x2="1.86" y2="173.28"/><line class="lineOver4" x1="192.82" y1="115.64" x2="83.73" y2="222.34"/></g>
             
-            <g id="peopleRight" class="slide-in-elliptic-top-fwd"" data-name="Peeps R"><path class="peopleRight1" d="M132.1,46.46V46h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17A12.08,12.08,0,0,0,107.92,46h0V59.7h24.2V46.46Z" transform="translate(3.02 2.47)"/><path class="peopleRight2" d="M132.1,97v-.5h0A12.08,12.08,0,0,0,126.89,87a7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V110.2h24.2V97Z" transform="translate(3.02 2.47)"/><path class="peopleRight3" d="M132.1,146.16v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V159.4h24.2V146.16Z" transform="translate(3.02 2.47)"/><path class="peopleRight4" d="M132.1,194.66v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V207.9h24.2V194.66Z" transform="translate(3.02 2.47)"/></g>
+            <g id="peopleRight dragSVG" class="" data-name="Peeps R"><path class="draggable peopleRight1" d="M132.1,46.46V46h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17A12.08,12.08,0,0,0,107.92,46h0V59.7h24.2V46.46Z" transform="translate(3.02 2.47)"/><path class="draggable peopleRight2" d="M132.1,97v-.5h0A12.08,12.08,0,0,0,126.89,87a7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V110.2h24.2V97Z" transform="translate(3.02 2.47)"/><path class="draggable peopleRight3" d="M132.1,146.16v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V159.4h24.2V146.16Z" transform="translate(3.02 2.47)"/><path class="draggable peopleRight4" d="M132.1,194.66v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V207.9h24.2V194.66Z" transform="translate(3.02 2.47)"/></g>
         </svg>
 
-        <svg class="eye">
-            <circle cx="50" cy="50" r="50" class="eyeball" />
-            <circle cx="50" cy="50" r="30" class="pupil" />
-          </svg>
+        <!-- <svg class="eye">
+            <circle cx="225" cy="65" r="50" class="eyeball" />
+            <circle cx="225" cy="65" r="30" class="pupil" />
+            slide-in-elliptic-top-fwd
+          </svg> -->
 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/Draggable.min.js"></script>
             <script src="js/eyeFollow.js"></script>
+            <script src="js/dragPeople.js"></script>
         </body>
 </html>
