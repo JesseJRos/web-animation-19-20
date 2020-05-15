@@ -5,14 +5,19 @@ body {
 }
 
 .svg {
-  margin-top: 5.56em;
-  transform: scale(1.36);
+  margin-top: 14.72em;
+  transform: scale(2.378);
   width: 19.5em;
   height: 13.6em;
   margin-left: auto;
   margin-right: auto;
   display: block;
   background-color: rgb(125, 161, 185);
+}
+
+.buttonStart {
+  /* filter: invert(1); */
+  filter: hue-rotate(90deg);
 }
 
 /* eyeball */
@@ -87,8 +92,16 @@ body {
 }
 
 .faceMask { 
-    fill:url(#linear-gradient-8);
+    fill:url(#maskGradient);
 }
+
+.faceMask:active {
+  fill:url(#noMaskGradient)
+}
+/* 
+.faceNoMask {
+  fill:url(#noMaskGradient);
+} */
 
 .earHole { 
     fill:#231a17;
@@ -131,7 +144,7 @@ body {
 
 /* bar */
 .barRectangle { 
-    fill:#75522f;
+    fill:url(#barGradient);
 }
 
 /* lineOver */
@@ -179,5 +192,65 @@ body {
     fill:url(#linear-gradient-28);
 }
 
-/* CSS animations */
-  
+
+
+/* BUTTON */
+.button {
+  border-radius: 50%;
+  box-shadow: 0 0 .5em rgba(0,0,0,1), 
+    inset 0 .25em .3em rgba(255,255,255,.3), 
+    inset 0 -.25em .3em rgba(0,0,0,.5);
+  cursor: pointer;
+  font: inherit;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.button:before {
+  background: linear-gradient(to bottom,  
+    rgba(255,255,255,0.14) 0%, 
+    rgba(255,255,255,0) 50%, 
+    rgba(255,255,255,0) 100%);
+  border-radius: 50%;
+  content: " ";
+  height: 80%;
+  left: 10%;
+  position: absolute;
+  top: 10%;
+  width: 80%;
+}
+
+.button:active {
+  box-shadow: 0 0 .5em rgba(0,0,0,1), 
+    inset 0 .1em .3em rgba(0,0,0,.5), 
+    inset 0 -.1em .3em rgba(0,0,0,.5);
+}
+
+.button:active:before {
+  top: 11.5%;
+}
+
+.button-frame {
+  background: #ee2525;
+  border-radius: 15%;
+  box-shadow:
+    0 0 .15em rgba(0,0,0,.9), 
+    inset 0 .15em rgba(255,255,255,.3), 
+    inset 0 -.20em rgba(0,0,0,.3);
+  display: block;
+  margin-top: -5em;
+  margin-left: 76em;
+  padding: 0.60em;
+  position: relative;
+  height: 4em;
+  width: 4em;
+  z-index: 20;
+}
+
+.noPressText {
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hotpink;
+}

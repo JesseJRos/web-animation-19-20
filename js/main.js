@@ -30,7 +30,21 @@ Draggable.create(".draggable", {
 // mouseEffects JS //
 function mouseOverEffect() {
     this.classList.add("pupilEnlarge");
-  }
-  function mouseOutEffect() {
+}
+function mouseOutEffect() {
     this.classList.remove("pupilEnlarge");
-  }
+}
+
+
+document.getElementById("redButtonClick").addEventListener("click", activateRedButton);
+
+function activateRedButton(){
+    var svgArtWork = document.getElementById("svg");
+
+    if (svgArtWork.classList.contains('buttonStart')) {
+        svgArtWork.classList.remove("buttonStart");
+    } else {
+        svgArtWork.classList.add("buttonStart");
+    }
+};
+  

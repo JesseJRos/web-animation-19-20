@@ -9,8 +9,8 @@
     </head>
     <!-- 313.23 223.41 -->
     <body>
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
-            
+        <svg class="svg" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
             <linearGradient id="linear-gradient" x1="81.7" y1="109.99" x2="-42.34" y2="109.99" gradientTransform="matrix(-0.55, 0, 0, 1, 288.48, 2.58)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#221b17"/><stop offset="1" stop-color="#e9e7d5"/></linearGradient>
             <linearGradient id="linear-gradient-2" x1="81.7" y1="109.99" x2="-42.34" y2="109.99" gradientTransform="matrix(-0.55, 0, 0, 1, 288.48, 2.58)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="1"/></linearGradient>
             <linearGradient id="linear-gradient-3" x1="83.32" y1="79.27" x2="-102.45" y2="80.07" gradientTransform="matrix(-0.4, -0.24, 0.03, 0.96, 270.73, 23.27)" xlink:href="#linear-gradient"/>
@@ -18,7 +18,14 @@
             <linearGradient id="linear-gradient-5" x1="82.77" y1="141.67" x2="-104.36" y2="141.33" gradientTransform="matrix(-0.38, 0.26, 0, 0.96, 272.9, -9.86)" xlink:href="#linear-gradient"/>
             <linearGradient id="linear-gradient-6" x1="83.23" y1="141.67" x2="-104.81" y2="141.33" gradientTransform="matrix(-0.38, 0.26, 0, 0.96, 272.9, -9.86)" xlink:href="#linear-gradient-2"/>
             <linearGradient id="linear-gradient-7" x1="80.71" y1="120.85" x2="271" y2="120.85" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ebe5d2"/><stop offset="0.9" stop-color="#d58a46"/></linearGradient>
-            <linearGradient id="linear-gradient-8" x1="167.8" y1="94.43" x2="271" y2="94.43" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#929292"/><stop offset="1" stop-color="#030303"/></linearGradient>
+            <linearGradient id="maskGradient" x1="167.8" y1="94.43" x2="271" y2="94.43" gradientUnits="userSpaceOnUse">
+                <stop offset="0" style="stop-color:#929292; stop-opacity:1;"/>
+                <stop offset="1" style="stop-color:#030303; stop-opacity:1;"/>
+            </linearGradient>
+            <linearGradient id="noMaskGradient" x1="167.8" y1="94.43" x2="271" y2="94.43" gradientUnits="userSpaceOnUse">
+                <stop offset="0" style="stop-color:#c57c7c; stop-opacity:1;"/>
+                <stop offset="1" style="stop-color:#663131; stop-opacity:1;"/>
+            </linearGradient>
             <linearGradient id="linear-gradient-9" y1="53.78" x2="187.46" y2="53.78" gradientTransform="matrix(1.01, 0.01, 0.01, 1, 0.72, 1.19)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e9e7d5"/><stop offset="0.97" stop-color="#221b17"/></linearGradient>
             <linearGradient id="linear-gradient-10" x1="-0.8" y1="53.64" x2="188.26" y2="53.92" gradientTransform="matrix(1.01, 0.01, 0.01, 1, 0.72, 1.19)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e9e7d5"/><stop offset="0.11" stop-color="#d9d7c6"/><stop offset="0.34" stop-color="#afac9e"/><stop offset="0.65" stop-color="#6c675e"/><stop offset="0.97" stop-color="#221b17"/><stop offset="1" stop-color="#221b17"/></linearGradient>
             <linearGradient id="linear-gradient-11" x1="2.98" y1="111.47" x2="189.73" y2="111.47" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient-9"/>
@@ -38,8 +45,10 @@
             <linearGradient id="linear-gradient-25" x1="107.9" y1="43.46" x2="132.1" y2="43.46" xlink:href="#linear-gradient-15"/>
             <linearGradient id="linear-gradient-26" x1="107.9" y1="93.96" x2="132.1" y2="93.96" xlink:href="#linear-gradient-15"/>
             <linearGradient id="linear-gradient-27" x1="107.9" y1="143.16" x2="132.1" y2="143.16" xlink:href="#linear-gradient-15"/>
-            <linearGradient id="linear-gradient-28" x1="107.9" y1="191.66" x2="132.1" y2="191.66" xlink:href="#linear-gradient-15"/></defs>
-                        
+            <linearGradient id="linear-gradient-28" x1="107.9" y1="191.66" x2="132.1" y2="191.66" xlink:href="#linear-gradient-15"/>
+            <linearGradient id="barGradient" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" style="stop-color:#DD79AF;stop-opacity:1" /><stop offset="100%" style="stop-color:rgb(230, 167, 200);stop-opacity:1" /></linearGradient>
+        </defs>
+        
             <!-- <g id="background">
                 <rect x="3.02" y="2.39" width="100%" height="100%"/>
             </g> -->
@@ -54,11 +63,11 @@
                 <path class="headShape" d="M155.75,218l76-71.75H271v-19.5a19,19,0,0,1-18-12.5c-5.25-13.25,5.25-19,5.25-19l-5.88-5.87,8.13-8.13L222.62,43.38S194.5,13,149,27.75C126.69,35,108.17,62.24,106.33,84.33c-1.9,23,13.34,40.67,13.34,40.67l-39,41.1,15,51.9Z" transform="translate(3.02 2.47)"/>
                 <path class="headColor" d="M92.81,252.67" transform="translate(3.02 2.47)"/>
             </g>
-            
+
             <g id="face">
                 <path class="faceMask" d="M221.73,42.48l-47,46s-18,16.25,4,32.5a17.41,17.41,0,0,0,8.25,1.75c4.5-.25,6-1,9.25,0s1.75,2,7.75,7,9.25-3,9.25-3,16.58,19.4,18.52,19.5c6,.3,39.25,0,39.25,0v-19.5s-28.75-3-12.75-31.5l-5.88-5.87,8.13-8.13Z" transform="translate(3.02 2.47)"/>
             </g>
-            
+
             <g id="ear">
                 <circle class="earHole" cx="196.69" cy="111.63" r="7.17"/>
             </g>
@@ -84,7 +93,7 @@
             </g>
             
             <g id="bar">
-                <rect class="barRectangle" x="83" y="0" width="39.67" height="440"/>
+                <rect class="barRectangle" x="83" y="0" width="39.67" height="220"/>
             </g>
             
             <g id="linesOver" data-name="Lines Over">
@@ -101,6 +110,11 @@
                 <path class="draggable peopleRight4" d="M132.1,194.66v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V207.9h24.2V194.66Z" transform="translate(3.02 2.47)"/>
             </g>
         </svg>
+        
+        <div class="button-frame">
+            <div class="button" id="redButtonClick"></div>
+            <p class="noPressText">DO NOT PRESS</p>
+          </div>
 
         <!-- <svg class="eye">
             <circle cx="225" cy="65" r="50" class="eyeball" />
