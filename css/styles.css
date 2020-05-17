@@ -16,8 +16,35 @@ body {
 }
 
 .buttonStart {
-  /* filter: invert(1); */
-  filter: hue-rotate(90deg);
+  filter: invert(1);
+  background: linear-gradient(0deg, #ffffff, #b9927d);
+  background-size: 400% 400%;
+  animation: artDoomed 3s ease infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.artFlames {
+  position: absolute;
+  width: 56%;
+  margin-top: -3.3em;
+  margin-left: 20em;
+  animation: flames 5s ease;
+  z-index: 1;
+}
+
+@keyframes artDoomed {
+  0% {background-position:51% 0%;}
+  50% {background-position:50% 100%}
+  100% {background-position:51% 0%}
+}
+
+@keyframes flames {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
 }
 
 /* eyeball */

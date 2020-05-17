@@ -40,11 +40,14 @@ document.getElementById("redButtonClick").addEventListener("click", activateRedB
 
 function activateRedButton(){
     var svgArtWork = document.getElementById("svg");
+    var fire = document.getElementById("artFlames");
 
     if (svgArtWork.classList.contains('buttonStart')) {
         svgArtWork.classList.remove("buttonStart");
+        fire.classList.add("hidden");
     } else {
         svgArtWork.classList.add("buttonStart");
+        fire.classList.remove("hidden");
     }
 };
   
