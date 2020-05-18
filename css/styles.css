@@ -4,6 +4,26 @@ body {
     background-size: cover;
 }
 
+@media only screen and (max-width: 750px) {
+   #svg {
+      /* width: 100%; */
+      margin-left: auto;
+      margin-right: auto;
+      transform: rotate(90deg) scale(2);
+      transition: all 1s ease;
+  }
+  body {
+    background: rgb(125, 161, 185);
+    transition: all 1s ease;
+  }
+}
+
+@media only screen and (min-width: 751px) and (max-width: 760px) {
+  #svg {
+    transition: all 1s ease;
+ }
+}
+
 .svg {
   margin-top: 14.72em;
   transform: scale(2.378);
@@ -12,7 +32,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-color: rgb(125, 161, 185);
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(../images/frameTrans.png);
 }
 
 .buttonStart {
@@ -42,9 +64,8 @@ body {
 }
 
 @keyframes flames {
-  0% {opacity: 0}
-  50% {opacity: 1}
-  100% {opacity: 0}
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 /* eyeball */
@@ -66,8 +87,8 @@ body {
 @keyframes pupilEnlargement {
   0% {
     r: 1.3%;
-    cx: 225;
-    cy: 65;
+    /* cx: 225;
+    cy: 65; */
   }
   50% {
     r: 2%;
@@ -76,8 +97,8 @@ body {
   }
   100% {
     r: 1.3%;
-    cx: 225;
-    cy: 65;
+    /* cx: 225;
+    cy: 65; */
   }
 }
 
@@ -219,9 +240,7 @@ body {
     fill:url(#linear-gradient-28);
 }
 
-
-
-/* BUTTON */
+/* Big red button */
 .button {
   border-radius: 50%;
   box-shadow: 0 0 .5em rgba(0,0,0,1), 

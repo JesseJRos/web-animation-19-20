@@ -51,3 +51,25 @@ function activateRedButton(){
     }
 };
   
+// Tips voor toggle
+// 1 Element selecteren
+// var svgArtwork = document.querySelector("svg");
+
+// 2 Luisteren naar event
+// svgArtwork.addEventListener('buttonStart', toggle)
+
+// 3 CSS aanpassen, class toevoegen
+// function toggle() {
+//     svgArtwork.classList.add('buttonStart');
+// }
+
+// Tips voor toetsenbord toggle (KeyBoardEvent)
+// var square = document.querySelector('.square');
+
+// window.addEventListener('keydown', toggle);
+
+// function toggle(event) {
+//     if(event.keyCode === 32) {
+//         square.classList.toggle('click');   
+//     }
+// }
