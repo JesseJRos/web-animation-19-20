@@ -1,3 +1,12 @@
+.circle{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+
+
 body {
     background:
     url(../images/museumWall.png) center no-repeat fixed;
@@ -12,6 +21,7 @@ body {
       transform: rotate(90deg) scale(2);
       transition: all 1s ease;
   }
+  
   body {
     background: rgb(125, 161, 185);
     transition: all 1s ease;
@@ -32,9 +42,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image: url(../images/frameTrans.png);
+  background: rgb(125, 161, 185);
 }
 
 .buttonStart {
@@ -51,7 +59,7 @@ body {
 .artFlames {
   position: absolute;
   width: 56%;
-  margin-top: -3.3em;
+  margin-top: 7.9em;
   margin-left: 20em;
   animation: flames 5s ease;
   z-index: 1;
@@ -139,17 +147,38 @@ body {
     fill:#e6c393;
 }
 
-.faceMask { 
-    fill:url(#maskGradient);
-}
-
-.faceMask:active {
+.faceMask {
   fill:url(#noMaskGradient)
 }
-/* 
-.faceNoMask {
-  fill:url(#noMaskGradient);
-} */
+
+.underTheMask{
+  opacity: 0;
+}
+
+.faceMask2:active, .underTheMask{
+  opacity: 1;
+}
+
+.faceMask2 {
+  transform: translate(3.02px, 2.47px);
+  fill:url(#maskGradient);
+}
+
+.faceMask2:active {
+    transform: translate(30px, 120px) rotate(20deg);
+    transition: 1s ease-in;
+}
+
+.underTheMask {
+  stroke-dasharray: 50;
+  animation: dash 15s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
 
 .earHole { 
     fill:#231a17;
@@ -178,16 +207,59 @@ body {
 }
 
 /* peopleLeft */
-.peopleLeft1 {
-    fill:url(#linear-gradient-15);
+.personLeft1 {
+  fill:url(#linear-gradient-15);
 }
 
-.peopleLeft2 { 
-    fill:url(#linear-gradient-16);
+.personToggle1 {
+  fill: hotpink;
 }
 
-.peopleLeft3 { 
-    fill:url(#linear-gradient-17);
+.personLeft2 {
+  fill:url(#linear-gradient-15);
+}
+
+.personToggle2 {
+  fill: yellow;
+}
+
+.personLeft3 {
+  fill:url(#linear-gradient-15);
+}
+
+.personToggle3 {
+  fill: limegreen;
+  animation: popup 10s ease-in-out;
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(auto);
+    transform: translateX(auto);
+  }
+  10% {
+    transform: translateY(150px);
+    transform: translateX(30px);
+  }
+  30% {
+    transform: translateX(10px);
+    transform: rotate(-2deg);
+  }
+  44% {
+    transform: translateY(0px);
+    transform: translateX(5px);
+    transform: rotate(-6deg);
+  }
+  47% {
+    transform: translateY(150px);
+  }
+  60% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(auto);
+    transform: translateX(auto);
+  }
 }
 
 /* bar */
@@ -240,7 +312,9 @@ body {
     fill:url(#linear-gradient-28);
 }
 
-/* Big red button */
+/**************
+ Big red button 
+***************/
 .button {
   border-radius: 50%;
   box-shadow: 0 0 .5em rgba(0,0,0,1), 

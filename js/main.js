@@ -50,18 +50,96 @@ function activateRedButton(){
         fire.classList.remove("hidden");
     }
 };
-  
-// Tips voor toggle
-// 1 Element selecteren
-// var svgArtwork = document.querySelector("svg");
 
-// 2 Luisteren naar event
-// svgArtwork.addEventListener('buttonStart', toggle)
+// Move Left People - peopleLeft
+// document.getElementsByClassName("peopleL").addEventListener("keydown", colorChange);
 
-// 3 CSS aanpassen, class toevoegen
-// function toggle() {
-//     svgArtwork.classList.add('buttonStart');
+    // function colorChange(event) {
+    //     var peopleLeft = document.getElementsByClassName("peopleL");
+
+    //     var randomColor = 
+    //     '#'+Math.floor(Math.random()*16777215).toString(16);
+
+    //     let keyCode = e.keyCode;
+    //     if (event.keyCode === 32) {
+    //         console.log(peopleLeft);
+    //         console.log(randomColor);    
+    //     }
+
+    // }
+
+var peopleLeft1 = document.querySelector('.personLeft1');
+
+window.addEventListener("keydown", colorChange1);
+
+function colorChange1(e) {
+
+    let keyCode = e.keyCode;
+    if (keyCode === 49) {
+        peopleLeft1.classList.toggle('personToggle1');   
+};
+};
+
+
+var peopleLeft2 = document.querySelector('.personLeft2');
+
+window.addEventListener("keydown", colorChange2);
+
+function colorChange2(e) {
+
+    let keyCode = e.keyCode;
+    if (keyCode === 50) {
+        peopleLeft2.classList.toggle('personToggle2');   
+};
+};
+
+
+var peopleLeft3 = document.querySelector('.personLeft3');
+
+window.addEventListener("keydown", colorChange3);
+
+function colorChange3(e) {
+
+    let keyCode = e.keyCode;
+    if (keyCode === 51) {
+        peopleLeft3.classList.toggle('personToggle3');   
+};
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function barMove(event){
+//     var bar = document.getElementsByClassName("barRectangle");
+//     var pressKey = event.keyCode;
+
+//     if (pressKey === 100) {
+//         console.log('test');
+//         console.log(bar);
+//         bar.moveBy(100, 100);
+//     }
 // }
+
+// window.addEventListener('keypress', barMove);
+
+// console log keycode
+
+// window.addEventListener('keypress', function(e) {
+//     console.log("Key: " + e.code + ", Code: " + e.charCode)
+//   });
 
 // Tips voor toetsenbord toggle (KeyBoardEvent)
 // var square = document.querySelector('.square');
@@ -72,4 +150,16 @@ function activateRedButton(){
 //     if(event.keyCode === 32) {
 //         square.classList.toggle('click');   
 //     }
+// }
+
+// Tips voor toggle
+// 1 Element selecteren
+// var svgArtwork = document.querySelector("svg");
+
+// 2 Luisteren naar event
+// svgArtwork.addEventListener('buttonStart', toggle)
+
+// 3 CSS aanpassen, class toevoegen
+// function toggle() {
+//     svgArtwork.classList.add('buttonStart');
 // }
