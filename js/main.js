@@ -70,9 +70,9 @@ function activateRedButton(){
 
 var peopleLeft1 = document.querySelector('.personLeft1');
 
-window.addEventListener("keydown", colorChange1);
+window.addEventListener("keydown", animationStart1);
 
-function colorChange1(e) {
+function animationStart1(e) {
 
     let keyCode = e.keyCode;
     if (keyCode === 49) {
@@ -83,9 +83,9 @@ function colorChange1(e) {
 
 var peopleLeft2 = document.querySelector('.personLeft2');
 
-window.addEventListener("keydown", colorChange2);
+window.addEventListener("keydown", animationStart2);
 
-function colorChange2(e) {
+function animationStart2(e) {
 
     let keyCode = e.keyCode;
     if (keyCode === 50) {
@@ -96,9 +96,9 @@ function colorChange2(e) {
 
 var peopleLeft3 = document.querySelector('.personLeft3');
 
-window.addEventListener("keydown", colorChange3);
+window.addEventListener("keydown", animationStart3);
 
-function colorChange3(e) {
+function animationStart3(e) {
 
     let keyCode = e.keyCode;
     if (keyCode === 51) {

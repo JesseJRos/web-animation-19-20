@@ -1,12 +1,3 @@
-.circle{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-color: green;
-}
-
-
-
 body {
     background:
     url(../images/museumWall.png) center no-repeat fixed;
@@ -138,6 +129,50 @@ body {
     stroke-width:3px;
 }
 
+.mouthBeam1:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.mouthBeam2:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.mouthBeam3:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+@keyframes wiggleBeams {
+  0% {
+            transform: translateY(0) rotate(0);
+            transform-origin: 50% 50%;
+  }
+  15% {
+            transform: translateY(-1.5px) rotate(2.5deg);
+  }
+  30% {
+            transform: translateY(3.5px) rotate(-1.5deg);
+  }
+  45% {
+            transform: translateY(-3.5px) rotate(0.9deg);
+  }
+  60% {
+            transform: translateY(2.25px) rotate(-0.6deg);
+  }
+  75% {
+            transform: translateY(-1.5px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+}
+
 /* head */
 .headShape {
     fill:url(#linear-gradient-7);
@@ -206,36 +241,148 @@ body {
     stroke-width:3px;
 }
 
+.lineUnder1:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.lineUnder2:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.lineUnder3:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
 /* peopleLeft */
 .personLeft1 {
   fill:url(#linear-gradient-15);
+  transform: translate(0);
 }
 
 .personToggle1 {
   fill: hotpink;
+  animation: wiggleBoi 0.8s infinite;
+  }
+
+@keyframes wiggleBoi {
+  0% {
+      transform: translateY(0) rotate(0);
+      transform-origin: 50% 50%;
+  }
+  15% {
+      transform: translateY(-30px) rotate(6deg);
+  }
+  30% {
+      transform: translateY(15px) rotate(-6deg);
+  }
+  45% {
+      transform: translateY(-15px) rotate(3.6deg);
+  }
+  60% {
+      transform: translateY(9px) rotate(-2.4deg);
+  }
+  75% {
+      transform: translateY(-6px) rotate(1.2deg);
+  }
+  100% {
+      transform: translateY(0) rotate(0);
+      transform-origin: 50% 50%;
+  }
 }
+
+
 
 .personLeft2 {
   fill:url(#linear-gradient-15);
+  transform: translate(0);
 }
 
 .personToggle2 {
-  fill: yellow;
+  animation: spinnyBoi 5s ease-in-out;
+}
+
+@keyframes spinnyBoi {
+  0% {
+    transform: scale(auto);
+    fill: rgb(255, 255, 98);
+  }
+
+  10% {
+    transform: scale(0.25);
+    transform: translateX(500);
+    transform: rotate(45deg);
+    fill: rgb(252, 220, 38);
+  }
+
+  20% {
+    transform: scale(0.50);
+    fill: rgb(195, 255, 98);
+  }
+
+  30% {
+  transform: scale(0.40);
+  transform: rotate(0deg);
+  fill: rgb(255, 135, 98);
+  }
+
+  40% {
+  transform: scale(0.60);
+  fill: rgb(98, 255, 229);
+  }
+
+  50% {
+  transform: scale(0.65);
+  transform: rotate(90deg);
+  fill: rgb(255, 98, 216);
+  }
+
+  60% {
+  transform: scale(0.50);
+  fill: rgb(98, 255, 137);
+  }
+
+  70% {
+  transform: scale(0.75);
+  fill: rgb(255, 161, 98);
+  }
+
+  80% {
+  transform: scale(0.30);
+
+  }
+
+  90% {
+  transform: scale(0.25);
+
+  }
+
+  100% {
+    transform: scale(auto);
+    fill: rgb(255, 255, 98);
+  }
 }
 
 .personLeft3 {
   fill:url(#linear-gradient-15);
+  transform: translate(0);
+  box-shadow: 10px 10px 82px 0px rgba(255,227,84,1);
 }
 
 .personToggle3 {
-  fill: limegreen;
-  animation: popup 10s ease-in-out;
+  animation: shyBoi 5s ease-in-out;
 }
 
-@keyframes popup {
+@keyframes shyBoi {
   0% {
     transform: translateY(auto);
     transform: translateX(auto);
+    fill: limegreen;
   }
   10% {
     transform: translateY(150px);
@@ -246,8 +393,8 @@ body {
     transform: rotate(-2deg);
   }
   44% {
-    transform: translateY(0px);
-    transform: translateX(5px);
+    transform: translateX(10px);
+    transform: rotate(-2deg);
     transform: rotate(-6deg);
   }
   47% {
@@ -255,10 +402,17 @@ body {
   }
   60% {
     transform: translateY(50px);
+    fill: limegreen;
+  }
+  80% {
+    opacity: 0.5;
+    box-shadow: 10px 10px 82px 0px rgba(255,227,84,1);
   }
   100% {
     transform: translateY(auto);
     transform: translateX(auto);
+    opacity: 1;
+    fill:url(#linear-gradient-15);
   }
 }
 
@@ -294,6 +448,30 @@ body {
     stroke-miterlimit:10;
     stroke-width:3px;
 } 
+
+.lineOver1:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.lineOver2:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.lineOver3:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
+
+.lineOver4:not(:hover) {
+  animation: wiggleBeams;
+  animation-duration: 1.8s;
+  animation-timing-function: ease;
+}
 
 /* peopleRight */
 .peopleRight1 {
