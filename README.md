@@ -56,6 +56,38 @@ document.addEventListener("mousemove", (e)=>{
       pupil.style.transformOrigin = `${r +"px"} center`;
 });
 ```
+
+Uiteindelijk heb ik er voor gekozen om het pupil te laten pulseren wanneer je er over heen gaat met je muis. Om dit effectief te doen heb ik gebruik gemaakt van de pseudo-class `:not(:hover)`. Als ik de normale `:hover` zou gebruiken wrd de animatie enkel getriggered als je muis het pupil aanraakt, dus dit zou niet mooi werken. De `:not(:hover)` zorgt er voor dat de animatie triggered wanneer de class registreert dat je er over heen hebt gehoverd, dus wanneer je hem niet meer aanraakt.
+
+```html
+<g>
+  <circle class="pupil" cx="225" cy="65" r="1.3%"/>
+</g>
+```
+
+```css
+.pupil:not(:hover){
+  animation-name: pupilEnlargement;
+  animation-duration: 1s;
+}
+
+@keyframes pupilEnlargement {
+  0% {
+    r: 1.3%;
+  }
+  50% {
+    r: 2%;
+  }
+  100% {
+    r: 1.3%;
+  }
+}
+```
+
+In de CSS animatie `<pupilEnlargement>` heb ik gewerkt met de radius van de SVG cirkel. Deze vergroot en verkleint. Een kleine maar effectieve animatie dus.
+
+![pupil](https://user-images.githubusercontent.com/37974966/82755956-52bf0000-9dd7-11ea-8053-a5b402bb2f33.gif)
+
 ## Drag the peeps
 Ik wilde iets doen met de figuren aan de rechter kant van de bar. Mijn idee was dat deze figuren van alles vertellen aan de persoon in het artwork, vandaar dat hij schreeuwt. De lijnen lopen door de figuren naar het oor van de persoon. Dus ik bedacht om deze onderdelen van het SVG naar het oor toe te slepen en ze dan te laten verdwijnen. Dit is me gelukt met behulp van de Greensock Draggable en TweenMax libraries. Ik had nog niet eerder met libraries gewerkt dus dit vond ik interessant om te doen. In de sources onderaan mijn documentatie staat de video die me heeft geholpen om deze interactie aan de praat te krijgen. De draggable library zorgt ervoor dat SVG elementen verplaatst kunnen worden en de TweenMax library laat je animeren binnen in JavaScript functions. 
 
@@ -82,3 +114,61 @@ Draggable.create(".draggable", {
      }
  });
 ```
+
+## Big Red Doom Button
+In het kader van een duister bericht achter het kunstwerk wilde ik een 'big red button' toevoegen die de *ware aard* van het kunstwerk zou laten zien. Wanneer je op deze knop drukt verandert het kunstwerk drastisch en zie je verschillende animaties aan het werk. Allereerst moest ik een knop aanmaken met een <if> <else> statement. De knop luistert naar een <'click'> en verwijdert classes wanneer hij word triggered. Hij verwijdert de <.buttonStart> class en maakt de <.artFlames> hidden. Ik verwijderde de <.artFlames> niet omdat dit een .gif is die constant afspeelt op de website, anders zou je de gif zien starten en dat vond ik minder mooi.
+
+![DoomArt](https://user-images.githubusercontent.com/37974966/82755090-bd6d3d00-9dd1-11ea-86bc-91f148a51ce2.gif)
+
+```css
+.buttonStart {
+  filter: invert(1);
+  background: linear-gradient(0deg, #ffffff, #b9927d);
+  background-size: 400% 400%;
+  animation: artDoomed 3s ease infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.artFlames {
+  position: absolute;
+  width: 56%;
+  margin-top: 7.9em;
+  margin-left: 20em;
+  animation: flames 5s ease;
+  z-index: 1;
+}
+
+@keyframes artDoomed {
+  0% {background-position:51% 0%;}
+  50% {background-position:50% 100%}
+  100% {background-position:51% 0%}
+}
+
+@keyframes flames {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+```
+
+```js
+document.getElementById("redButtonClick").addEventListener("click", activateRedButton);
+
+function activateRedButton(){
+    var svgArtWork = document.getElementById("svg");
+    var fire = document.getElementById("artFlames");
+
+    if (svgArtWork.classList.contains('buttonStart')) {
+        svgArtWork.classList.remove("buttonStart");
+        fire.classList.add("hidden");
+    } else {
+        svgArtWork.classList.add("buttonStart");
+        fire.classList.remove("hidden");
+    }
+};
+```
+
+In de <.buttonStart> heb ik voor het eerst gewerkt met het <filter> property. Ik heb gespeeld met verschillende filters zoals <grayscale>, <blur> en <sepia> maar voor het ultieme verdoemenis effect vond ik de <invert> filter toch wel het meest gepast. 
+Ook zie je hier dat ik de achtergrond heb geanimeerd. De gradient op de achtergrond beweegt langzaam omhoog door middel van <background-position> 
