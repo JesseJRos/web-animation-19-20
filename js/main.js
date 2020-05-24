@@ -1,5 +1,5 @@
-// eyeFollow JS //
-// let eyeBall = document.querySelector(".eyeball"),
+// eyeFollow JS
+// var eyeBall = document.querySelector(".eyeball"),
 //     pupil = document.querySelector(".pupil"),
 //     eyeArea = eyeBall.getBoundingClientRect(),
 //     pupilArea = pupil.getBoundingClientRect(),
@@ -9,7 +9,7 @@
 //     centerY = eyeArea.top;
 
 // document.addEventListener("mousemove", (e)=>{
-//   let x = e.clientX - centerX,
+//   var x = e.clientX - centerX,
 //       y = e.clientY - centerY,
 //       theta = Math.atan2(y,x),
 //       angle = theta*180/Math.PI + 360;
@@ -17,11 +17,12 @@
 //       pupil.style.transformOrigin = `${r +"px"} center`;
 // });
 
+// No animations on load pls //
 setTimeout(function(){
     document.body.className="";
 },2500);
 
-// dragPeople JS //
+// Drag ALL the people //
 Draggable.create(".draggable", {
   bounds:"svg",
   onDrag: function() {
@@ -31,7 +32,7 @@ Draggable.create(".draggable", {
   }
 });
 
-// mouseEffects JS //
+// Pupil enlargement surgery //
 function mouseOverEffect() {
     this.classList.add("pupilEnlarge");
 }
@@ -39,7 +40,7 @@ function mouseOutEffect() {
     this.classList.remove("pupilEnlarge");
 }
 
-
+// Big red doom button
 document.getElementById("redButtonClick").addEventListener("click", activateRedButton);
 
 function activateRedButton(){
@@ -55,35 +56,18 @@ function activateRedButton(){
     }
 };
 
-// Move Left People - peopleLeft
-// document.getElementsByClassName("peopleL").addEventListener("keydown", colorChange);
-
-    // function colorChange(event) {
-    //     var peopleLeft = document.getElementsByClassName("peopleL");
-
-    //     var randomColor = 
-    //     '#'+Math.floor(Math.random()*16777215).toString(16);
-
-    //     let keyCode = e.keyCode;
-    //     if (event.keyCode === 32) {
-    //         console.log(peopleLeft);
-    //         console.log(randomColor);    
-    //     }
-
-    // }
-
+// Move the left peeps
 var peopleLeft1 = document.querySelector('.personLeft1');
 
 window.addEventListener("keydown", animationStart1);
 
 function animationStart1(e) {
 
-    let keyCode = e.keyCode;
+    var keyCode = e.keyCode;
     if (keyCode === 49) {
         peopleLeft1.classList.toggle('personToggle1');   
 };
 };
-
 
 var peopleLeft2 = document.querySelector('.personLeft2');
 
@@ -91,12 +75,11 @@ window.addEventListener("keydown", animationStart2);
 
 function animationStart2(e) {
 
-    let keyCode = e.keyCode;
+    var keyCode = e.keyCode;
     if (keyCode === 50) {
         peopleLeft2.classList.toggle('personToggle2');   
 };
 };
-
 
 var peopleLeft3 = document.querySelector('.personLeft3');
 
@@ -104,7 +87,7 @@ window.addEventListener("keydown", animationStart3);
 
 function animationStart3(e) {
 
-    let keyCode = e.keyCode;
+    var keyCode = e.keyCode;
     if (keyCode === 51) {
         peopleLeft3.classList.toggle('personToggle3');   
 };

@@ -6,7 +6,8 @@ body {
 
 .preload *{
   animation-duration: 0s !important;
-  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
 
 @media only screen and (max-width: 750px) {
    #svg {
@@ -16,12 +17,12 @@ body {
       transition: all 1s ease;
   }
   
-  body {
+body {
     background: rgb(125, 161, 185);
     transition: all 1s ease;
   }
 
-  #mouthBeams {
+#mouthBeams {
     animation: beamsGone 1s ease;
     animation-delay: 1.5s;
   }
@@ -123,83 +124,69 @@ body {
 @keyframes pupilEnlargement {
   0% {
     r: 1.3%;
-    /* cx: 225;
-    cy: 65; */
   }
   50% {
     r: 2%;
-    /* cx: 222;
-    cy: 63; */
   }
   100% {
     r: 1.3%;
-    /* cx: 225;
-    cy: 65; */
   }
 }
 
 /* mouthBeams */
-/* #mouthBeams {
-    margin-top: 20em;
-    background-color: violet;
-} */
-
 .mouthBeam1 {
-    fill:url(#linear-gradient);
     stroke:url(#linear-gradient-2);
     stroke-miterlimit:10;
     stroke-width:3px;
-
 }
 
 .mouthBeam2 {
-    fill:url(#linear-gradient-3);
     stroke:url(#linear-gradient-4);
     stroke-miterlimit:10;
     stroke-width:3px;
 }
 
 .mouthBeam3 {
-    fill:url(#linear-gradient-5);
     stroke:url(#linear-gradient-6);
     stroke-miterlimit:10;
     stroke-width:3px;
 }
 
 .mouthBeam1:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleBeams 1.8s ease;
 }
 
 .mouthBeam2:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleBeams 1.8s ease;
 }
 
 .mouthBeam3:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleBeams 1.8s ease;
 }
 
 @keyframes wiggleBeams {
   0% {
             transform: translateY(0) rotate(0);
             transform-origin: 50% 50%;
+            stroke-width: 3px;
   }
   15% {
             transform: translateY(-1.5px) rotate(2.5deg);
+            stroke-width: 10px;
+            stroke: rgba(255, 196, 0, 0.8);
   }
   30% {
-            transform: translateY(3.5px) rotate(-1.5deg);
+            transform: translateY(2.5px) rotate(-1.5deg);
+            stroke-width: 12px;
   }
   45% {
-            transform: translateY(-3.5px) rotate(0.9deg);
+            transform: translateY(-2.5px) rotate(0.9deg);
+            stroke-width: 10px;
   }
   60% {
-            transform: translateY(2.25px) rotate(-0.6deg);
+            transform: translateY(1.75px) rotate(-0.6deg);
+            stroke-width: 3px;
+            stroke: rgba(255, 196, 0, 0.8);
   }
   75% {
             transform: translateY(-1.5px) rotate(0.3deg);
@@ -216,19 +203,11 @@ body {
 }
 
 .headColor{
-    fill:#e6c393;
+  fill:#e6c393;
 }
 
 .faceMask {
   fill:url(#noMaskGradient)
-}
-
-.underTheMask{
-  opacity: 0;
-}
-
-.faceMask2:active, .underTheMask{
-  opacity: 1;
 }
 
 .faceMask2 {
@@ -237,8 +216,8 @@ body {
 }
 
 .faceMask2:active {
-    transform: translate(30px, 120px) rotate(20deg);
-    transition: 1s ease-in;
+  transform: translate(30px, 120px) rotate(20deg);
+  transition: 1s ease-in;
 }
 
 .underTheMask {
@@ -279,19 +258,19 @@ body {
 }
 
 .lineUnder1:not(:hover) {
-  animation: wiggleBeams;
+  animation: wiggleLines;
   animation-duration: 1.8s;
   animation-timing-function: ease;
 }
 
 .lineUnder2:not(:hover) {
-  animation: wiggleBeams;
+  animation: wiggleLines;
   animation-duration: 1.8s;
   animation-timing-function: ease;
 }
 
 .lineUnder3:not(:hover) {
-  animation: wiggleBeams;
+  animation: wiggleLines;
   animation-duration: 1.8s;
   animation-timing-function: ease;
 }
@@ -333,8 +312,6 @@ body {
   }
 }
 
-
-
 .personLeft2 {
   fill:url(#linear-gradient-15);
   transform: translate(0);
@@ -349,56 +326,44 @@ body {
     transform: scale(auto);
     fill: rgb(255, 255, 98);
   }
-
   10% {
     transform: scale(0.25);
     transform: translateX(500);
     transform: rotate(45deg);
     fill: rgb(252, 220, 38);
   }
-
   20% {
     transform: scale(0.50);
     fill: rgb(195, 255, 98);
   }
-
   30% {
   transform: scale(0.40);
   transform: rotate(0deg);
   fill: rgb(255, 135, 98);
   }
-
   40% {
   transform: scale(0.60);
   fill: rgb(98, 255, 229);
   }
-
   50% {
   transform: scale(0.65);
   transform: rotate(90deg);
   fill: rgb(255, 98, 216);
   }
-
   60% {
   transform: scale(0.50);
   fill: rgb(98, 255, 137);
   }
-
   70% {
   transform: scale(0.75);
   fill: rgb(255, 161, 98);
   }
-
   80% {
   transform: scale(0.30);
-
   }
-
   90% {
   transform: scale(0.25);
-
   }
-
   100% {
     transform: scale(auto);
     fill: rgb(255, 255, 98);
@@ -443,7 +408,6 @@ body {
   }
   80% {
     opacity: 0.5;
-    box-shadow: 10px 10px 82px 0px rgba(255,227,84,1);
   }
   100% {
     transform: translateY(auto);
@@ -460,21 +424,18 @@ body {
 
 /* lineOver */
 .lineOver1 { 
-    fill:url(#linear-gradient-18);
     stroke:url(#linear-gradient-19);
     stroke-miterlimit:10;
     stroke-width:3px;
 }
 
 .lineOver2 { 
-    fill:url(#linear-gradient-20);
     stroke:url(#linear-gradient-21);
     stroke-miterlimit:10;
     stroke-width:3px;
 }
 
 .lineOver3 { 
-    fill:url(#linear-gradient-22);
     stroke:url(#linear-gradient-23);
     stroke-miterlimit:10;
     stroke-width:3px;
@@ -487,27 +448,45 @@ body {
 } 
 
 .lineOver1:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleLines 1.8s ease;
 }
 
 .lineOver2:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleLines 1.8s ease;
 }
 
 .lineOver3:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleLines 1.8s ease;
 }
 
 .lineOver4:not(:hover) {
-  animation: wiggleBeams;
-  animation-duration: 1.8s;
-  animation-timing-function: ease;
+  animation: wiggleLines 1.8s ease;
+}
+
+@keyframes wiggleLines {
+  0% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateY(-1.3px) translateX(0.5px) rotate(1.2deg);
+  }
+  30% {
+    transform: translateY(1.2px) translateX(1px) rotate(-1deg);
+  }
+  45% {
+    transform: translateY(-1px) translateX(0.5px) rotate(0.5deg);
+  }
+  60% {
+    transform: translateY(1px) translateX(1px) rotate(-0.6deg);
+  }
+  75% {
+    transform: translateY(-0.5px) translateX(0.5px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
 }
 
 /* peopleRight */
@@ -527,9 +506,7 @@ body {
     fill:url(#linear-gradient-28);
 }
 
-/**************
- Big red button 
-***************/
+/* Big red button */
 .button {
   border-radius: 50%;
   box-shadow: 0 0 .5em rgba(0,0,0,1), 
