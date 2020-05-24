@@ -22,8 +22,8 @@ Toen de SVG eenmaal was opgeschoond en alles klaar stond in de code was de omgev
 
 <img width="1440" alt="Screenshot 2020-05-24 at 14 10 08" src="https://user-images.githubusercontent.com/37974966/82753741-513a0b80-9dc8-11ea-9862-f361cb8437c0.png">
 
-## Interacties
-# Eye tracking
+# Interacties
+## Eye tracking
 Vanuit hier ben ik eerst begonnen met de moeilijkste klus die ik voor *ogen* had. Een cursor tracking animatie. Ik wilde het oog in de SVG de muis laten volgen. Ik heb hier ongeveer 2 hele dagen aan gewerkt en aan het einde geschrapt omdat ik het simpelweg niet voor elkaar keeg en ik mij realiseerde dat het niet alleen te veel tijd vergde maar ook dat ik veel meer met JavaScript aan het doen was en niet zo zeer CSS, en dat het dus waarschijnlijk niet een groot verlies zou zijn voor dit vak als ik het niet meer zou doen.
 
 ![eyeFollowBAD](https://user-images.githubusercontent.com/37974966/82753461-1b942300-9dc6-11ea-81ae-ac3780022aad.gif)
@@ -56,7 +56,7 @@ document.addEventListener("mousemove", (e)=>{
       pupil.style.transformOrigin = `${r +"px"} center`;
 });
 ```
-# Drag the peeps
+## Drag the peeps
 Ik wilde iets doen met de figuren aan de rechter kant van de bar. Mijn idee was dat deze figuren van alles vertellen aan de persoon in het artwork, vandaar dat hij schreeuwt. De lijnen lopen door de figuren naar het oor van de persoon. Dus ik bedacht om deze onderdelen van het SVG naar het oor toe te slepen en ze dan te laten verdwijnen. Dit is me gelukt met behulp van de Greensock Draggable en TweenMax libraries. Ik had nog niet eerder met libraries gewerkt dus dit vond ik interessant om te doen. In de sources onderaan mijn documentatie staat de video die me heeft geholpen om deze interactie aan de praat te krijgen. De draggable library zorgt ervoor dat SVG elementen verplaatst kunnen worden en de TweenMax library laat je animeren binnen in JavaScript functions. 
 
 ![dragThePeeps](https://user-images.githubusercontent.com/37974966/82754257-0c17d880-9dcc-11ea-9393-c760372e4ba1.gif)
