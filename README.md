@@ -68,7 +68,7 @@ document.addEventListener("mousemove", (e)=>{
 });
 ```
 
-Uiteindelijk heb ik er voor gekozen om het pupil te laten pulseren wanneer je er over heen gaat met je muis. Om dit effectief te doen heb ik gebruik gemaakt van de pseudo-class `:not(:hover)`. Als ik de normale `:hover` zou gebruiken wrd de animatie enkel getriggered als je muis het pupil aanraakt, dus dit zou niet mooi werken. De `:not(:hover)` zorgt er voor dat de animatie triggered wanneer de class registreert dat je er over heen hebt gehoverd, dus wanneer je hem niet meer aanraakt.
+Uiteindelijk heb ik er voor gekozen om het pupil te laten pulseren wanneer je er over heen gaat met je muis. Om dit effectief te doen heb ik gebruik gemaakt van de pseudo-class `:not(:hover)`. Als ik de normale `:hover` zou gebruiken word de animatie enkel getriggered als je muis de pupil aanraakt, dus dit zou niet mooi werken. De `:not(:hover)` zorgt er voor dat de animatie triggered wanneer de class registreert dat je er over heen hebt gehoverd, dus wanneer je hem niet meer aanraakt.
 
 ```html
 <g>
@@ -128,6 +128,8 @@ Draggable.create(".draggable", {
 
 ## 1, 2 and 3 moving guys
 Omdat ik de rechter figuurtjes heb laten bewegen kan ik de linker 3 natuurlijk niet achter laten. Op deze figuren wilde ik de keyboard event toepassen. Ze hebben alle drie een andere animatie en zijn ten alle tijden te stoppen waarna ze weer terug gaan naar de originele plek. Je kunt ze besturen door de nummer toetsen **1, 2 & 3** in te drukken.
+
+![123guys](https://user-images.githubusercontent.com/37974966/82758913-bce0a080-9de9-11ea-92c4-d1e6c38cfd2b.gif)
 
 ### Guy #1
 ```css
@@ -339,6 +341,188 @@ function activateRedButton(){
 
 In de `.buttonStart` heb ik voor het eerst gewerkt met het `filter` property. Ik heb gespeeld met verschillende filters zoals `grayscale`, `blur` en `sepia` maar voor het ultieme verdoemenis effect vond ik de `invert` filter toch wel het meest gepast. 
 Ook zie je hier dat ik de achtergrond heb geanimeerd. De gradient op de achtergrond beweegt langzaam omhoog door middel van `background-position` 
+
+## Telegraph lines
+De lijnen in het kunstwerk zijn door de kunstenaar bedacht als telegraaf lijnen. Hierdoor kwam ik op het idee om ze ook zo te animeren. Ik wilde het laten lijken alsof je met je hand langs hele slappe gitaar snaren gaat en ze bungelen nog even na. 
+
+![telegraphLines](https://user-images.githubusercontent.com/37974966/82759682-33cc6800-9def-11ea-91ad-9c58f81ddaf1.gif)
+
+```css
+.lineOver1 { 
+    stroke:url(#linear-gradient-19);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineOver2 { 
+    stroke:url(#linear-gradient-21);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineOver3 { 
+    stroke:url(#linear-gradient-23);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.lineOver4 { 
+    stroke:url(#linear-gradient-24);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+} 
+
+.lineOver1:not(:hover) {
+  animation: wiggleLines 1.8s ease;
+}
+
+.lineOver2:not(:hover) {
+  animation: wiggleLines 1.8s ease;
+}
+
+.lineOver3:not(:hover) {
+  animation: wiggleLines 1.8s ease;
+}
+
+.lineOver4:not(:hover) {
+  animation: wiggleLines 1.8s ease;
+}
+
+@keyframes wiggleLines {
+  0% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateY(-1.3px) translateX(0.5px) rotate(1.2deg);
+  }
+  30% {
+    transform: translateY(1.2px) translateX(1px) rotate(-1deg);
+  }
+  45% {
+    transform: translateY(-1px) translateX(0.5px) rotate(0.5deg);
+  }
+  60% {
+    transform: translateY(1px) translateX(1px) rotate(-0.6deg);
+  }
+  75% {
+    transform: translateY(-0.5px) translateX(0.5px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+}
+```
+
+Alle lijnen in de SVG zijn opgedeeld in lineOver en lineUnder omdat er een perspectief is met de bar die deze scheid. Ook bij deze classes heb ik de pseudo-class `:not(:hover)` gebruikt om de animaties te triggeren *nadat* je met je muis erover heen gaat. Door de X en Y as te transformen en daarbij de SVG lijnen te rotaten creeër ik dit wiggle-achtige effect waardoor het lijkt als je met je muis langs slappe draden gaat.
+
+Ik heb een soortgelijke animatie toegepast op de lijnen die uit de mond van de persoon komen.
+
+![mouthBeams](https://user-images.githubusercontent.com/37974966/82760351-4052bf80-9df3-11ea-9ff3-36e0b272368d.gif)
+
+```css
+.mouthBeam1 {
+    stroke:url(#linear-gradient-2);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.mouthBeam2 {
+    stroke:url(#linear-gradient-4);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.mouthBeam3 {
+    stroke:url(#linear-gradient-6);
+    stroke-miterlimit:10;
+    stroke-width:3px;
+}
+
+.mouthBeam1:not(:hover) {
+  animation: wiggleBeams 1.8s ease;
+}
+
+.mouthBeam2:not(:hover) {
+  animation: wiggleBeams 1.8s ease;
+}
+
+.mouthBeam3:not(:hover) {
+  animation: wiggleBeams 1.8s ease;
+}
+
+@keyframes wiggleBeams {
+  0% {
+            transform: translateY(0) rotate(0);
+            transform-origin: 50% 50%;
+            stroke-width: 3px;
+  }
+  15% {
+            transform: translateY(-1.5px) rotate(2.5deg);
+            stroke-width: 10px;
+            stroke: rgba(255, 196, 0, 0.8);
+  }
+  30% {
+            transform: translateY(2.5px) rotate(-1.5deg);
+            stroke-width: 12px;
+  }
+  45% {
+            transform: translateY(-2.5px) rotate(0.9deg);
+            stroke-width: 10px;
+  }
+  60% {
+            transform: translateY(1.75px) rotate(-0.6deg);
+            stroke-width: 3px;
+            stroke: rgba(255, 196, 0, 0.8);
+  }
+  75% {
+            transform: translateY(-1.5px) rotate(0.3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+}
+```
+
+Hier heb ik ook nog de kleur en de `stroke-width` van de lijnen laten veranderen in de animatie omdat ik deze wilde over laten komen als beams. Alsof de persoon alle informatie er uit spuwt in een soort powerbeam.
+
+## Drop the mask
+In deze interactie laat ik het ware gezicht zien van de "onschuldige" krantenjongen zoals Cassandre hem bedoelt had. Wanneer je op het masker klikt, en ingedrukt houd, valt het masker van het gezicht en zie je het echte gezicht van de persoon. Hieronder verschijnt een path SVG die rondbeweegt, alsof hij een soort Freddy Krueger achtig gezicht heeft. Brrr.
+
+![faceReveal](https://user-images.githubusercontent.com/37974966/82760449-e7375b80-9df3-11ea-8fc4-f723bb930ec0.gif)
+
+```css
+.faceMask {
+  fill:url(#noMaskGradient)
+}
+
+.faceMask2 {
+  transform: translate(3.02px, 2.47px);
+  fill:url(#maskGradient);
+}
+
+.faceMask2:active {
+  transform: translate(30px, 120px) rotate(20deg);
+  transition: 1s ease-in;
+}
+
+.underTheMask {
+  stroke-dasharray: 50;
+  animation: dash 15s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+```
+
+Om dit effect voor elkaar te krijgen moest ik eerst een 2e versie van het masker maken. Ik heb de SVG laag gekopieerd en er een andere naam aan gegeven. Vervolgens heb ik deze met `transform:translate` op de juiste plek gezet en de `:active` state van dit masker een andere positie gegeven en hem 20 graden gedraaid, hier staat een 1s ease-in op endit zorgt voor het vallende effect.
+
+Voor de rondkruipende lijnen onder het masker heb ik in Illustrator een path gemaakt die binnen de grenzen van het masker blijft. Deze heb ik vervolgens in de hoofd SVG geplaatst en de class `.underTheMask` gegeven. Omdat ik mijn path enkel met een stroke had gemaakt kon ik deze vervolgens gaan aanpassen in CSS. Met de `stroke-dasharray` zorg je voor gaps in het path en in de animatie heb ik gezegd dat hij naar `stroke-dashoffset: 1000` moet gaan waardoor hij dus rond gaat bewegen. Ik heb met de timing van de animatie gespeeld tot het naar mijn wens was.
 
 # Bronnen
 * [Animista](https://animista.net)
