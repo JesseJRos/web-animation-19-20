@@ -9,6 +9,17 @@ Deze poster werd door Cassandre ontworpen voor de Franse krant 'L'intransigeant'
 
 Het profiel shot van de man beeld een krantenjongen af die de headlines van de dag verkondigd op straat. De bruine balk en witte 'figuren' is een telegraafpaal met keramische insulatoren er aan vast. En de lijnen zijn dus telegraaflijnen die zijn verbonden met wat de krantenjongen roept. Het kunstwerk sprak mij allereerst aan omdat hij vrij creepy oogde. Ik verwachtte een grimmig propaganda-achtig verhaal hier achter. Maar dat is dus niet het geval. Dit neemt echter niet weg dat ik dit er toch van wilde maken voor deze opdracht :)
 
+# Controls cheatseet
+| Control | Target | Action |
+| ------- |:------:| --------:|
+| `1 Key` | Figure left top | Animate guy 1 |
+| `2 Key` | Figure left mid | Animate guy 2 |
+| `3 Key` | Figure left bottom | Animate guy 3 |
+| `Click` | Big red button | Alternate art |
+| `Hover` | Eyeball | Pulse the pupil |
+| `Drag` | All figures right | Disappear into ear |
+| `Long Press` | Facemask | Reveal his truth |
+
 # Werkwijze
 ## Concept
 Ik wilde met deze opdracht vooral zoveel mogelijk verschillende animaties toe passen en het hoefde van mij niet per se een verhaal te volgen of zich binden aan 1 thema. Ik heb hier en daar wel wat creepy-ish dingen er in omdat ik naar het kunstwerk bleef kijken door een 'het is propaganda!' lens
@@ -115,6 +126,158 @@ Draggable.create(".draggable", {
  });
 ```
 
+## 1, 2 and 3 moving guys
+Omdat ik de rechter figuurtjes heb laten bewegen kan ik de linker 3 natuurlijk niet achter laten. Op deze figuren wilde ik de keyboard event toepassen. Ze hebben alle drie een andere animatie en zijn ten alle tijden te stoppen waarna ze weer terug gaan naar de originele plek. Je kunt ze besturen door de nummer toetsen **1, 2 & 3** in te drukken.
+
+### Guy #1
+```css
+.personToggle1 {
+  fill: hotpink;
+  animation: wiggleBoi 0.8s infinite;
+  }
+
+@keyframes wiggleBoi {
+  0% {
+      transform: translateY(0) rotate(0);
+      transform-origin: 50% 50%;
+  }
+  15% {
+      transform: translateY(-30px) rotate(6deg);
+  }
+  30% {
+      transform: translateY(15px) rotate(-6deg);
+  }
+  45% {
+      transform: translateY(-15px) rotate(3.6deg);
+  }
+  60% {
+      transform: translateY(9px) rotate(-2.4deg);
+  }
+  75% {
+      transform: translateY(-6px) rotate(1.2deg);
+  }
+  100% {
+      transform: translateY(0) rotate(0);
+      transform-origin: 50% 50%;
+  }
+}
+```
+```js
+var peopleLeft1 = document.querySelector('.personLeft1');
+
+window.addEventListener("keydown", animationStart1);
+
+function animationStart1(e) {
+
+    var keyCode = e.keyCode;
+    if (keyCode === 49) {
+        peopleLeft1.classList.toggle('personToggle1');   
+};
+};
+```
+Op het bovenste figuur heb ik een animatie gezet die op en neer wiggled. Deze laat ik oneindig doorgaan en hij gaat elke keer weer terug naar zijn originele positie. In het stukje JavaScript heb ik een `addEventListener` op de `window` geplaatst omdat het niet werkte om deze op de SVG zelf te zetten. De `EventListener` luisterd naar een `keydown` en start vervolgens de `animationStart1`. In deze function zeg ik dat als de `e.keyCode`, die word herkent door de `EventListener`, gelijk is aan 49 (dit is het nummer 1) dan toggled hij tussen classes voor de class `.personLeft1`. En in deze toggle class zit de animatie die word afgespeeld. Dit is het zelfde voor figuurtje 2 en 3 dus hier laat ik enkel de CSS code van zien.
+
+### Guy #2
+```css
+.personToggle2 {
+  animation: spinnyBoi 5s ease-in-out;
+}
+
+@keyframes spinnyBoi {
+  0% {
+    transform: scale(auto);
+    fill: rgb(255, 255, 98);
+  }
+  10% {
+    transform: scale(0.25);
+    transform: translateX(500);
+    transform: rotate(45deg);
+    fill: rgb(252, 220, 38);
+  }
+  20% {
+    transform: scale(0.50);
+    fill: rgb(195, 255, 98);
+  }
+  30% {
+  transform: scale(0.40);
+  transform: rotate(0deg);
+  fill: rgb(255, 135, 98);
+  }
+  40% {
+  transform: scale(0.60);
+  fill: rgb(98, 255, 229);
+  }
+  50% {
+  transform: scale(0.65);
+  transform: rotate(90deg);
+  fill: rgb(255, 98, 216);
+  }
+  60% {
+  transform: scale(0.50);
+  fill: rgb(98, 255, 137);
+  }
+  70% {
+  transform: scale(0.75);
+  fill: rgb(255, 161, 98);
+  }
+  80% {
+  transform: scale(0.30);
+  }
+  90% {
+  transform: scale(0.25);
+  }
+  100% {
+    transform: scale(auto);
+    fill: rgb(255, 255, 98);
+  }
+}
+```
+### Guy #3
+```css
+.personToggle3 {
+  animation: shyBoi 5s ease-in-out;
+}
+
+@keyframes shyBoi {
+  0% {
+    transform: translateY(auto);
+    transform: translateX(auto);
+    fill: limegreen;
+  }
+  10% {
+    transform: translateY(150px);
+    transform: translateX(30px);
+  }
+  30% {
+    transform: translateX(10px);
+    transform: rotate(-2deg);
+  }
+  44% {
+    transform: translateX(10px);
+    transform: rotate(-2deg);
+    transform: rotate(-6deg);
+  }
+  47% {
+    transform: translateY(150px);
+  }
+  60% {
+    transform: translateY(50px);
+    fill: limegreen;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(auto);
+    transform: translateX(auto);
+    opacity: 1;
+    fill:url(#linear-gradient-15);
+  }
+}
+```
+
+Bij deze laatste heb ik gespeeld met een beetje karakter te geven aan het figuurtje. Hij verdwijnt achter de bar, kijkt verlegen om het hoekje en verdwijnt ineens veel sneller waarna hij weer met z'n gewone kleur terug komt vanuit een andere kant. Ik heb hiervoor met de X en Y waardes gewerkt van het SVG figuur. En heb met de % alles zo goed mogelijk getimed.
+
 ## Big Red Doom Button
 In het kader van een duister bericht achter het kunstwerk wilde ik een 'big red button' toevoegen die de *ware aard* van het kunstwerk zou laten zien. Wanneer je op deze knop drukt verandert het kunstwerk drastisch en zie je verschillende animaties aan het werk. Allereerst moest ik een knop aanmaken met een `if` `else` statement. 
 
@@ -176,3 +339,10 @@ function activateRedButton(){
 
 In de `.buttonStart` heb ik voor het eerst gewerkt met het `filter` property. Ik heb gespeeld met verschillende filters zoals `grayscale`, `blur` en `sepia` maar voor het ultieme verdoemenis effect vond ik de `invert` filter toch wel het meest gepast. 
 Ook zie je hier dat ik de achtergrond heb geanimeerd. De gradient op de achtergrond beweegt langzaam omhoog door middel van `background-position` 
+
+# Bronnen
+* [Animista](https://animista.net)
+* [CSS Almanac](https://css-tricks.com/almanac/)
+* [Greensock Draggable](https://greensock.com/docs/v2/Utilities/Draggable)
+* [Greensock TweenMax](https://greensock.com/tweenmax/)
+* [No animations on load](https://stackoverflow.com/questions/27938900/how-to-prevent-css-keyframe-animation-to-run-on-page-load)
