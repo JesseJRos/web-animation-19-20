@@ -19,7 +19,7 @@ Het profiel shot van de man beeld een krantenjongen af die de headlines van de d
 | `Hover` | Eyeball | Pulse the pupil |
 | `Drag` | All figures right | Disappear into ear |
 | `Long Press` | Facemask | Reveal his truth |
-| 'Hover' | All lines | Strum them all |
+| `Hover` | All lines | Strum them all |
 
 # Werkwijze
 ## Concept
