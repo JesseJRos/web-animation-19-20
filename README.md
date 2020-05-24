@@ -14,3 +14,6 @@ Het profiel shot van de man beeld een krantenjongen af die de headlines van de d
 Ik wilde met deze opdracht vooral zoveel mogelijk verschillende animaties toe passen en het hoefde van mij niet per se een verhaal te volgen of zich binden aan 1 thema. Ik heb hier en daar wel wat creepy-ish dingen er in omdat ik naar het kunstwerk bleef kijken door een 'het is propaganda!' lens
 
 Vervolgens heb ik het artwork geopend in Illustrator en nagemaakt om hem vervolgens te exporteren als SVG. Deze heb ik toen in mijn HTML/CSS gezet en opgeschoond.
+
+<img width="2787" alt="createSVGcode" src="https://user-images.githubusercontent.com/37974966/82752912-bdfdd780-9dc1-11ea-883e-e48be3e597e1.png">
+
