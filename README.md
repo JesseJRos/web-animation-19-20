@@ -539,4 +539,5 @@ Op mobile werken de meeste dingen. Je kan nog steeds de figuren draggen, op de l
 * [CSS Almanac](https://css-tricks.com/almanac/)
 * [Greensock Draggable](https://greensock.com/docs/v2/Utilities/Draggable)
 * [Greensock TweenMax](https://greensock.com/tweenmax/)
+* [Draggable Video](https://www.youtube.com/watch?v=8yKRl-w1wfo)
 * [No animations on load](https://stackoverflow.com/questions/27938900/how-to-prevent-css-keyframe-animation-to-run-on-page-load)
