@@ -284,7 +284,7 @@ Bij deze laatste heb ik gespeeld met een beetje karakter te geven aan het figuur
 ## Big Red Doom Button
 In het kader van een duister bericht achter het kunstwerk wilde ik een 'big red button' toevoegen die de *ware aard* van het kunstwerk zou laten zien. Wanneer je op deze knop drukt verandert het kunstwerk drastisch en zie je verschillende animaties aan het werk. Allereerst moest ik een knop aanmaken met een `if` `else` statement. 
 
-De knop luistert naar een `'click'` en heeft uit zichzelf geen .`buttonStart` class en .artFlames is op hidden gezet door `.hidden`. Wanneer je op de knop klikt checked de functie `activateRedButton` of de SVG een `.buttonStart` class bevat. Als dat niet zo is voegt hij deze toe en verwijdert hij de .hidden class van `.artFlames` zodat je deze kan zien. Als je op de knop klikt en hij heeft wel de `.buttonStart` class dan verwijdert hij deze weer en zet hij de `.artFlames` weer op hidden.
+De knop luistert naar een `'click'` en heeft uit zichzelf geen .`buttonStart` class en `.artFlames` is op hidden gezet door `.hidden`. Wanneer je op de knop klikt checked de functie `activateRedButton` of de SVG een `.buttonStart` class bevat. Als dat niet zo is voegt hij deze toe en verwijdert hij de .hidden class van `.artFlames` zodat je deze kan zien. Als je op de knop klikt en hij heeft wel de `.buttonStart` class dan verwijdert hij deze weer en zet hij de `.artFlames` weer op hidden.
 
 Ik verwijderde de `.artFlames` niet omdat dit een .gif is die constant afspeelt op de website, anders zou je de gif zien starten en dat vond ik minder mooi.
 
@@ -416,7 +416,7 @@ De lijnen in het kunstwerk zijn door de kunstenaar bedacht als telegraaf lijnen.
 }
 ```
 
-Alle lijnen in de SVG zijn opgedeeld in lineOver en lineUnder omdat er een perspectief is met de bar die deze scheid. Ook bij deze classes heb ik de pseudo-class `:not(:hover)` gebruikt om de animaties te triggeren *nadat* je met je muis erover heen gaat. Door de X en Y as te transformen en daarbij de SVG lijnen te rotaten creeër ik dit wiggle-achtige effect waardoor het lijkt als je met je muis langs slappe draden gaat.
+Alle lijnen in de SVG zijn opgedeeld in `lineOver` en `lineUnder` omdat er een perspectief is met de bar die deze scheid. Ook bij deze classes heb ik de pseudo-class `:not(:hover)` gebruikt om de animaties te triggeren *nadat* je met je muis erover heen gaat. Door de X en Y as te transformen en daarbij de SVG lijnen te rotaten creeër ik dit wiggle-achtige effect waardoor het lijkt als je met je muis langs slappe draden gaat.
 
 Ik heb een soortgelijke animatie toegepast op de lijnen die uit de mond van de persoon komen.
 
@@ -490,7 +490,7 @@ Ik heb een soortgelijke animatie toegepast op de lijnen die uit de mond van de p
 Hier heb ik ook nog de kleur en de `stroke-width` van de lijnen laten veranderen in de animatie omdat ik deze wilde over laten komen als beams. Alsof de persoon alle informatie er uit spuwt in een soort powerbeam.
 
 ## Drop the mask
-In deze interactie laat ik het ware gezicht zien van de "onschuldige" krantenjongen zoals Cassandre hem bedoelt had. Wanneer je op het masker klikt, en ingedrukt houd, valt het masker van het gezicht en zie je het echte gezicht van de persoon. Hieronder verschijnt een path SVG die rondbeweegt, alsof hij een soort Freddy Krueger achtig gezicht heeft. Brrr.
+In deze interactie laat ik het ware gezicht zien van de *"onschuldige"* krantenjongen zoals Cassandre hem bedoelt had. Wanneer je op het masker klikt, en ingedrukt houd, valt het masker van het gezicht en zie je het echte gezicht van de persoon. Hieronder verschijnt een path SVG die rondbeweegt, alsof hij een soort Freddy Krueger achtig gezicht heeft. Brrr.
 
 ![faceReveal](https://user-images.githubusercontent.com/37974966/82760449-e7375b80-9df3-11ea-8fc4-f723bb930ec0.gif)
 
