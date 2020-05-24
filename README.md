@@ -84,7 +84,7 @@ Uiteindelijk heb ik er voor gekozen om het pupil te laten pulseren wanneer je er
 }
 ```
 
-In de CSS animatie `<pupilEnlargement>` heb ik gewerkt met de radius van de SVG cirkel. Deze vergroot en verkleint. Een kleine maar effectieve animatie dus.
+In de CSS animatie `pupilEnlargement` heb ik gewerkt met de radius van de SVG cirkel. Deze vergroot en verkleint. Een kleine maar effectieve animatie dus.
 
 ![pupil](https://user-images.githubusercontent.com/37974966/82755956-52bf0000-9dd7-11ea-8053-a5b402bb2f33.gif)
 
@@ -93,7 +93,7 @@ Ik wilde iets doen met de figuren aan de rechter kant van de bar. Mijn idee was 
 
 ![dragThePeeps](https://user-images.githubusercontent.com/37974966/82754257-0c17d880-9dcc-11ea-9393-c760372e4ba1.gif)
 
-Door de <draggable> class aan het path van de SVG <g> te geven en te werken met scaling, opacity en svgOrigin van de figuren lijkt het alsof ze verdwijnen in het oor van de persoon.
+Door de <draggable> class aan het path van de SVG `<g>` te geven en te werken met scaling, opacity en svgOrigin van de figuren lijkt het alsof ze verdwijnen in het oor van de persoon.
 
 ```html
  <g id="peopleRight dragSVG">
@@ -116,7 +116,11 @@ Draggable.create(".draggable", {
 ```
 
 ## Big Red Doom Button
-In het kader van een duister bericht achter het kunstwerk wilde ik een 'big red button' toevoegen die de *ware aard* van het kunstwerk zou laten zien. Wanneer je op deze knop drukt verandert het kunstwerk drastisch en zie je verschillende animaties aan het werk. Allereerst moest ik een knop aanmaken met een <if> <else> statement. De knop luistert naar een <'click'> en verwijdert classes wanneer hij word triggered. Hij verwijdert de <.buttonStart> class en maakt de <.artFlames> hidden. Ik verwijderde de <.artFlames> niet omdat dit een .gif is die constant afspeelt op de website, anders zou je de gif zien starten en dat vond ik minder mooi.
+In het kader van een duister bericht achter het kunstwerk wilde ik een 'big red button' toevoegen die de *ware aard* van het kunstwerk zou laten zien. Wanneer je op deze knop drukt verandert het kunstwerk drastisch en zie je verschillende animaties aan het werk. Allereerst moest ik een knop aanmaken met een `if` `else` statement. 
+
+De knop luistert naar een `'click'` en heeft uit zichzelf geen .`buttonStart` class en .artFlames is op hidden gezet door `.hidden`. Wanneer je op de knop klikt checked de functie `activateRedButton` of de SVG een `.buttonStart` class bevat. Als dat niet zo is voegt hij deze toe en verwijdert hij de .hidden class van `.artFlames` zodat je deze kan zien. Als je op de knop klikt en hij heeft wel de `.buttonStart` class dan verwijdert hij deze weer en zet hij de `.artFlames` weer op hidden.
+
+Ik verwijderde de `.artFlames` niet omdat dit een .gif is die constant afspeelt op de website, anders zou je de gif zien starten en dat vond ik minder mooi.
 
 ![DoomArt](https://user-images.githubusercontent.com/37974966/82755090-bd6d3d00-9dd1-11ea-86bc-91f148a51ce2.gif)
 
@@ -170,5 +174,5 @@ function activateRedButton(){
 };
 ```
 
-In de <.buttonStart> heb ik voor het eerst gewerkt met het <filter> property. Ik heb gespeeld met verschillende filters zoals <grayscale>, <blur> en <sepia> maar voor het ultieme verdoemenis effect vond ik de <invert> filter toch wel het meest gepast. 
-Ook zie je hier dat ik de achtergrond heb geanimeerd. De gradient op de achtergrond beweegt langzaam omhoog door middel van <background-position> 
+In de `.buttonStart` heb ik voor het eerst gewerkt met het `filter` property. Ik heb gespeeld met verschillende filters zoals `grayscale`, `blur` en `sepia` maar voor het ultieme verdoemenis effect vond ik de `invert` filter toch wel het meest gepast. 
+Ook zie je hier dat ik de achtergrond heb geanimeerd. De gradient op de achtergrond beweegt langzaam omhoog door middel van `background-position` 
