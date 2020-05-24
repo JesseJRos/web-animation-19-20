@@ -17,3 +17,68 @@ Vervolgens heb ik het artwork geopend in Illustrator en nagemaakt om hem vervolg
 
 <img width="2787" alt="createSVGcode" src="https://user-images.githubusercontent.com/37974966/82752912-bdfdd780-9dc1-11ea-883e-e48be3e597e1.png">
 
+## De omgeving
+Toen de SVG eenmaal was opgeschoond en alles klaar stond in de code was de omgeving nog erg kaal. Enkel een SVG op een zwarte achtergrond. Ik wilde dit veranderen om het aantrekkelijker te maken. Ik vind dat het kunstwerk iets abstracts heeft en ik vind dat hij best past in een museum. Vandaar dus de gekozen background in de volgende iteratie van het kunstwerk. Ik heb de achtergrond, de lijst en het naam kaartje bij elkaar gezocht en compleet gemaakt in Photoshop. Ik vond de kleuren zoals ze in het oorspronkelijke kunstwerk zijn niet meer goed passen. Dus ben ik gaan spelen met verschillende kleur combinaties en ik kwam uit op dit retro-achtige kleurenpalet. Hier was ik tevreden mee en vanuit dit punt ben ik gaan werken aan animaties.
+
+<img width="1440" alt="Screenshot 2020-05-24 at 14 10 08" src="https://user-images.githubusercontent.com/37974966/82753741-513a0b80-9dc8-11ea-9862-f361cb8437c0.png">
+
+## Interacties
+# Eye tracking
+Vanuit hier ben ik eerst begonnen met de moeilijkste klus die ik voor *ogen* had. Een cursor tracking animatie. Ik wilde het oog in de SVG de muis laten volgen. Ik heb hier ongeveer 2 hele dagen aan gewerkt en aan het einde geschrapt omdat ik het simpelweg niet voor elkaar keeg en ik mij realiseerde dat het niet alleen te veel tijd vergde maar ook dat ik veel meer met JavaScript aan het doen was en niet zo zeer CSS, en dat het dus waarschijnlijk niet een groot verlies zou zijn voor dit vak als ik het niet meer zou doen.
+
+![eyeFollowBAD](https://user-images.githubusercontent.com/37974966/82753461-1b942300-9dc6-11ea-81ae-ac3780022aad.gif)
+
+Het oogbal bleef alleen binnen het oog oppervlakte als ik de code hieronder in de hoofd SVG plaatste als `<g>` maar dan werkte de JavaScript niet meer omdat deze niet individuele groups binnen een SVG kan targeten.
+
+```html
+<svg class="eye">
+    <circle cx="225" cy="65" r="50" class="eyeball" />
+    <circle cx="225" cy="65" r="30" class="pupil" />
+</svg>
+```
+
+```js
+var eyeBall = document.querySelector(".eyeball"),
+    pupil = document.querySelector(".pupil"),
+    eyeArea = eyeBall.getBoundingClientRect(),
+    pupilArea = pupil.getBoundingClientRect(),
+    R = eyeArea.width/20,
+    r = pupilArea.width/20,
+    centerX = eyeArea.left,
+    centerY = eyeArea.top;
+
+document.addEventListener("mousemove", (e)=>{
+  var x = e.clientX - centerX,
+      y = e.clientY - centerY,
+      theta = Math.atan2(y,x),
+      angle = theta*180/Math.PI + 360;
+      pupil.style.transform = `translateX(${R - r +"px"}) rotate(${angle + "deg"})`;
+      pupil.style.transformOrigin = `${r +"px"} center`;
+});
+```
+# Drag the peeps
+Ik wilde iets doen met de figuren aan de rechter kant van de bar. Mijn idee was dat deze figuren van alles vertellen aan de persoon in het artwork, vandaar dat hij schreeuwt. De lijnen lopen door de figuren naar het oor van de persoon. Dus ik bedacht om deze onderdelen van het SVG naar het oor toe te slepen en ze dan te laten verdwijnen. Dit is me gelukt met behulp van de Greensock Draggable en TweenMax libraries. Ik had nog niet eerder met libraries gewerkt dus dit vond ik interessant om te doen. In de sources onderaan mijn documentatie staat de video die me heeft geholpen om deze interactie aan de praat te krijgen. De draggable library zorgt ervoor dat SVG elementen verplaatst kunnen worden en de TweenMax library laat je animeren binnen in JavaScript functions. 
+
+![dragThePeeps](https://user-images.githubusercontent.com/37974966/82754257-0c17d880-9dcc-11ea-9393-c760372e4ba1.gif)
+
+Door de <draggable> class aan het path van de SVG <g> te geven en te werken met scaling, opacity en svgOrigin van de figuren lijkt het alsof ze verdwijnen in het oor van de persoon.
+
+```html
+ <g id="peopleRight dragSVG">
+   <path class="draggable peopleRight1" d="M132.1,46.46V46h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17A12.08,12.08,0,0,0,107.92,46h0V59.7h24.2V46.46Z" transform="translate(3.02 2.47)"/>
+   <path class="draggable peopleRight2" d="M132.1,97v-.5h0A12.08,12.08,0,0,0,126.89,87a7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V110.2h24.2V97Z" transform="translate(3.02 2.47)"/>
+   <path class="draggable peopleRight3" d="M132.1,146.16v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V159.4h24.2V146.16Z" transform="translate(3.02 2.47)"/>
+   <path class="draggable peopleRight4" d="M132.1,194.66v-.5h0a12.08,12.08,0,0,0-5.19-9.44,7,7,0,0,0,.28-2,7.34,7.34,0,0,0-14.67,0,7.08,7.08,0,0,0,.33,2.17,12.08,12.08,0,0,0-4.91,9.23h0V207.9h24.2V194.66Z" transform="translate(3.02 2.47)"/>
+</g>
+```
+
+```js
+Draggable.create(".draggable", {
+     bounds:"svg",
+     onDrag: function() {
+         if(this.hitTest("#ear")){
+             TweenLite.to(this.target, 1, {opacity:0, scale:0, svgOrigin:"195px 110px"})
+         }
+     }
+ });
+```
