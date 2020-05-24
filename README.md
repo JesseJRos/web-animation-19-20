@@ -524,6 +524,15 @@ Om dit effect voor elkaar te krijgen moest ik eerst een 2e versie van het masker
 
 Voor de rondkruipende lijnen onder het masker heb ik in Illustrator een path gemaakt die binnen de grenzen van het masker blijft. Deze heb ik vervolgens in de hoofd SVG geplaatst en de class `.underTheMask` gegeven. Omdat ik mijn path enkel met een stroke had gemaakt kon ik deze vervolgens gaan aanpassen in CSS. Met de `stroke-dasharray` zorg je voor gaps in het path en in de animatie heb ik gezegd dat hij naar `stroke-dashoffset: 1000` moet gaan waardoor hij dus rond gaat bewegen. Ik heb met de timing van de animatie gespeeld tot het naar mijn wens was.
 
+# Responsiveness
+Omdat ik een landscape kunstwerk heb vond ik het eerst vrij lastig om te bepalen hoe ik dit responsive ging maken. Ik besloot uiteindelijk om het kunstwerk 90 graden te draaien en de achtergrond te vullen met de achtergrondkleur van het kunstwerk. Het is niet helemaal wat ik wilde en er zit maar 1 breakpoint in maar, het werkt in ieder geval. Wanneer de window de rand van het kunstwerk aanraakt word het kunstwerk gedraaid met een transition en verdwijnen de mond beams terug in de mond, dit puur omdat ik deze niet mooi vond in deze positie. 
+
+![responsiveness](https://user-images.githubusercontent.com/37974966/82760698-9a548480-9df5-11ea-9cf7-9e0bc8be027f.gif)
+
+Ik had moeite met het scalen van de SVG zodat hij binnen het frame zou blijven die aan de muur hangt. De achtergrond heb ik als `cover` ingesteld op de `body` en dit werkt fijn en deze schaalt mee, maar de SVG kreeg ik niet perfect meegeschaald met de achtergrond. Vandaar dat de achtergrond nu wegvalt en de SVG blijft staan tot hij de rand raakt, waarna hij dus draait en geschikt voor mobile is.
+
+Op mobile werken de meeste dingen. Je kan nog steeds de figuren draggen, op de lijnen tappen om ze te laten bewegen, het masker laten vallen en op het oog drukken om hem te laten pulseren. De dingen die zijn weggevallen zijn de rode knop en de 3 geanimeerde figuren die links van de bar staan.
+
 # Bronnen
 * [Animista](https://animista.net)
 * [CSS Almanac](https://css-tricks.com/almanac/)
