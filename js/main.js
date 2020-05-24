@@ -17,6 +17,10 @@
 //       pupil.style.transformOrigin = `${r +"px"} center`;
 // });
 
+setTimeout(function(){
+    document.body.className="";
+},2500);
+
 // dragPeople JS //
 Draggable.create(".draggable", {
   bounds:"svg",

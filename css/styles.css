@@ -4,6 +4,10 @@ body {
     background-size: cover;
 }
 
+.preload *{
+  animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;}
+
 @media only screen and (max-width: 750px) {
    #svg {
       margin-left: auto;
@@ -16,12 +20,46 @@ body {
     background: rgb(125, 161, 185);
     transition: all 1s ease;
   }
+
+  #mouthBeams {
+    animation: beamsGone 1s ease;
+    animation-delay: 1.5s;
+  }
 }
 
-@media only screen and (min-width: 751px) and (max-width: 900px) {
+@media only screen and (min-width: 751px) and (max-width: 2000px) {
   #svg {
     transition: all 1s ease;
  }
+
+ #mouthBeams {
+  animation: beamsReturn 1s ease;
+  animation-delay: 1.5s;
+}
+}
+
+@keyframes beamsGone {
+  from {
+    transform: translateX(auto);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-5em);
+    opacity: 0;
+  }
+}
+
+@keyframes beamsReturn {
+  from {
+    transform: translateX(-5em);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(auto);
+    opacity: 1;
+  }
 }
 
 .svg {
